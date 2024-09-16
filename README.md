@@ -7,9 +7,11 @@
 | nickname           | string              | null: false               |
 | email              | string              | null: false, unique: true |
 | encrypted_password | string              | null: false               |
-| name               | string              | null: false               |
-| furigana_name      | string              | null: false               |
-| birthday           | integer             | null: false               |
+| lastname           | string              | null: false               |
+| firstname          | string              | null: false               |
+| furigana_lastname  | string              | null: false               |
+| furigana_firstname | string              | null: false               |
+| birthday           | date                | null: false               |
 
 ### Association
 
@@ -20,13 +22,13 @@
 
 | Column                              | Type       | Options                        |
 |-------------------------------------|------------|--------------------------------|
-| items.name                          | string     | null: false                    |
+| item_name                           | string     | null: false                    |
 | description                         | text       | null: false                    |
-| category                            | string     | null: false                    |
-| condition                           | string     | null: false                    |
-| postage                             | string     | null: false                    |
-| shipping_area                       | string     | null: false                    |
-| shipping_date                       | string     | null: false                    |
+| category_id                         | integer    | null: false                    |
+| condition_id                        | integer    | null: false                    |
+| postage_id                          | integer    | null: false                    |
+| prefecture_id                       | integer    | null: false                    |
+| shipping_date_id                    | integer    | null: false                    |
 | price                               | integer    | null: false                    |
 | user                                | references | null: false, foreign_key: true |
 
@@ -52,12 +54,12 @@
 
 | Column                              | Type       | Options                        |
 |-------------------------------------|------------|--------------------------------|
-| postcord                            | integer    | null: false                    |
-| prefectures                         | string     | null: false                    |
+| postcord                            | string     | null: false                    |
+| prefecture_id                       | integer    | null: false                    |
 | municipalities                      | string     | null: false                    |
 | street                              | string     | null: false                    |
 | building                            | string     |                                |
-| telephone number                    | integer    | null: false                    |
+| telephone_number                    | string     | null: false                    |
 | order                               | references | null: false, foreign_key: true |
 
 ### Association
